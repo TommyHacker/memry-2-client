@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Link from 'next/link';
 import Router from 'next/router';
 
 const Dashboard = ({ user, loggedIn, setLoggedIn }) => {
@@ -11,6 +12,7 @@ const Dashboard = ({ user, loggedIn, setLoggedIn }) => {
 		<div className='dashboard-container'>
 			<h3>Dashboard</h3>
 			<h4>welcome, {user.username}</h4>
+			<Link href='/memrys/new/'>Create Memry</Link>
 		</div>
 	);
 };

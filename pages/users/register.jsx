@@ -5,7 +5,7 @@ import Router from 'next/router';
 const RegisterPage = ({ loggedIn }) => {
 	useEffect(() => {
 		if (!loggedIn) return;
-		Router.replace('/dashboard');
+		Router.replace('/users/dashboard');
 	}, [loggedIn]);
 
 	const [username, setUsername] = useState('');

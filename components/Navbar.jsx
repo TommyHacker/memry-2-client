@@ -12,13 +12,13 @@ const Navbar = ({ loggedIn, setLoggedIn, setUser }) => {
 			<div className='nav-right'>
 				{!loggedIn && (
 					<>
-						<Link href='/login'>login</Link>
-						<Link href='/register'>register</Link>
+						<Link href='/users/login'>login</Link>
+						<Link href='/users/register'>register</Link>
 					</>
 				)}
 				{loggedIn && (
 					<>
-						<Link href='/dashboard'>Dashboard</Link>
+						<Link href='/users/dashboard'>Dashboard</Link>
 						<a onClick={logoutHandler}>Logout</a>
 					</>
 				)}

@@ -37,7 +37,7 @@ const LoginPage = ({ loggedIn, setLoggedIn, setUser, user }) => {
 				setUsername('');
 				setPassword('');
 				setLoggedIn(true);
-				Router.push('/dashboard');
+				Router.push('/users/dashboard');
 			}
 		} catch (err) {
 			console.log(err.message);
