@@ -1,0 +1,18 @@
+nav {
+  background: black;
+  color: white;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */
