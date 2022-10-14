@@ -1,6 +1,11 @@
 import Link from 'next/link';
 
-const Navbar = ({ loggedIn }) => {
+const Navbar = ({ loggedIn, setLoggedIn, setUser }) => {
+	const logoutHandler = () => {
+		if (!loggedIn) return;
+		setLoggedIn(false);
+		setUser(false);
+	};
 	return (
 		<nav>
 			<div className='nav-left'>logo</div>
@@ -14,6 +19,7 @@ const Navbar = ({ loggedIn }) => {
 				{loggedIn && (
 					<>
 						<Link href='/dashboard'>Dashboard</Link>
+						<a onClick={logoutHandler}>Logout</a>
 					</>
 				)}
 			</div>

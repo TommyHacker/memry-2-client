@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import Router from 'next/router';
 import axios from 'axios';
 
-const LoginPage = ({ loggedIn, setLoggedIn, setUser }) => {
+const LoginPage = ({ loggedIn, setLoggedIn, setUser, user }) => {
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+
 	useEffect(() => {
 		if (!loggedIn) return;
 		Router.push('/dashboard');
-	}, [loggedIn]);
-
-	const [username, setUsername] = useState('');
-	const [password, setPassword] = useState('');
+	}, [user]);
 
 	const handleUsername = (e) => {
 		setUsername(e.target.value);
@@ -33,12 +33,12 @@ const LoginPage = ({ loggedIn, setLoggedIn, setUser }) => {
 				console.log('something went wrong during login.');
 				return;
 			}
-			console.log(response.data);
-			setUsername('');
-			setPassword('');
-			const user = await response.data.data;
-			setUser(user);
-			setLoggedIn(true);
+			if (response.data.success) {
+				setUsername('');
+				setPassword('');
+				setLoggedIn(true);
+				Router.push('/dashboard');
+			}
 		} catch (err) {
 			console.log(err.message);
 		}
